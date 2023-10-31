@@ -18,7 +18,7 @@ class SColors {
     } else if (colorInt != null) {
       col = Color(colorInt);
     } else if (colorStr != null) {
-      col = Color(int.parse(colorStr));
+      col = Color(int.parse(colorStr.replaceAll('#', '0x')));
     } else {
       return null;
     }
@@ -48,7 +48,7 @@ class SColors {
     } else if (colorInt != null) {
       col = Color(colorInt);
     } else if (colorStr != null) {
-      col = Color(int.parse(colorStr));
+      col = Color(int.parse(colorStr.replaceAll('#', '0x')));
     } else {
       return null;
     }
@@ -76,7 +76,7 @@ class SColors {
     } else if (colorInt != null) {
       col = Color(colorInt);
     } else if (colorStr != null) {
-      col = Color(int.parse(colorStr));
+      col = Color(int.parse(colorStr.replaceAll('#', '0x')));
     } else {
       return null;
     }
@@ -99,7 +99,7 @@ class SColors {
     } else if (colorInt != null) {
       col = Color(colorInt);
     } else if (colorStr != null) {
-      col = Color(int.parse(colorStr));
+      col = Color(int.parse(colorStr.replaceAll('#', '0x')));
     } else {
       return null;
     }
