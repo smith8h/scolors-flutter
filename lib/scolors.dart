@@ -35,4 +35,33 @@ class SColors {
       (blue * factor).toInt().clamp(0, 255),
     );
   }
+  
+  /// get a lighter color from one color using a factor from 0-1.
+  static Color? lighterColor(
+    double factor, {
+    Color? color,
+    int? colorInt,
+    String? colorStr,
+  }) {
+    Color? col;
+    if (color != null) {
+      col = color;
+    } else if (colorInt != null) {
+      col = Color(colorInt);
+    } else if (colorStr != null) {
+      col = Color(int.parse(colorStr));
+    } else {
+      return null;
+    }
+
+    int alpha = col.alpha;
+    int red =
+        ((col.red * (1 - factor) / 255 + factor) * 255).round().clamp(0, 255);
+    int green =
+        ((col.green * (1 - factor) / 255 + factor) * 255).round().clamp(0, 255);
+    int blue =
+        ((col.blue * (1 - factor) / 255 + factor) * 255).round().clamp(0, 255);
+
+    return Color.fromARGB(alpha, red, green, blue);
+  }
 }
