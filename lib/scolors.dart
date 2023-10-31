@@ -35,8 +35,7 @@ class SColors {
       (blue * factor).toInt().clamp(0, 255),
     );
   }
-  
-  
+
   static Color? lighterColor(
     double factor, {
     Color? color,
@@ -86,5 +85,24 @@ class SColors {
     final newHue = (hsv.hue + 180.0) % 360.0;
     return HSVColor.fromAHSV(hsv.alpha, newHue, hsv.saturation, hsv.value)
         .toColor();
+  }
+
+  /// Convert RGB color to HSV color.
+  static Color? rgbToHsv({
+    Color? color,
+    int? colorInt,
+    String? colorStr,
+  }) {
+    Color? col;
+    if (color != null) {
+      col = color;
+    } else if (colorInt != null) {
+      col = Color(colorInt);
+    } else if (colorStr != null) {
+      col = Color(int.parse(colorStr));
+    } else {
+      return null;
+    }
+    return HSVColor.fromColor(col).toColor();
   }
 }
