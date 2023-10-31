@@ -1,3 +1,8 @@
+# CHANGELOG
+
 ## 0.0.1
 
-* TODO: Describe initial release.
+- Add `darkerColor` to get a darker color by factor from a already defined color.
+- Add `lighterColor` to get a lighter color by factor from a already defined color.
+- Add `oppositeColor` to get opposite color of a already defined color.
+- Add `rgbToHsv` to convert RGB color to HSV.
