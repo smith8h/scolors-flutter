@@ -36,7 +36,7 @@ class SColors {
     );
   }
   
-  /// get a lighter color from one color using a factor from 0-1.
+  
   static Color? lighterColor(
     double factor, {
     Color? color,
@@ -63,5 +63,28 @@ class SColors {
         ((col.blue * (1 - factor) / 255 + factor) * 255).round().clamp(0, 255);
 
     return Color.fromARGB(alpha, red, green, blue);
+  }
+
+  /// get an opposite color from one color.
+  static Color? oppositeColor({
+    Color? color,
+    int? colorInt,
+    String? colorStr,
+  }) {
+    Color? col;
+    if (color != null) {
+      col = color;
+    } else if (colorInt != null) {
+      col = Color(colorInt);
+    } else if (colorStr != null) {
+      col = Color(int.parse(colorStr));
+    } else {
+      return null;
+    }
+
+    final hsv = HSVColor.fromColor(col);
+    final newHue = (hsv.hue + 180.0) % 360.0;
+    return HSVColor.fromAHSV(hsv.alpha, newHue, hsv.saturation, hsv.value)
+        .toColor();
   }
 }
