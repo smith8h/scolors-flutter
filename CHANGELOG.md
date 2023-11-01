@@ -1,6 +1,4 @@
-# CHANGELOG
-
-## 0.0.1
+# 1.0.0
 
 - Add `darkerColor` to get a darker color by factor from a already defined color.
 - Add `lighterColor` to get a lighter color by factor from a already defined color.

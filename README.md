@@ -1,41 +1,37 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# SColors
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+![Builds and tests](https://github.com/smith8h/scolors-flutter/actions/workflows/build.yml/badge.svg)
+![Latest release](https://img.shields.io/github/v/release/smith8h/scolors-flutter?include_prereleases&amp;label=latest%20release)
+![Stable Version](https://img.shields.io/badge/stable_version-1.0.0-blue)
+![Stability](https://img.shields.io/badge/stability-stable-green.svg)
+![repo size](https://img.shields.io/github/repo-size/smith8h/scolors-flutter)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-# SColors - Flutter
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+A playful dart package to play with colors and get a lighter and darker color from an existing color you provide.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use this plugin, add scolors as a dependency in your pubspec.yaml file.
+
+## Example
+
+Import the library.
 
 ```dart
-const like = 'sample';
+import 'package:scolors/scolors.dart';
 ```
 
-## Additional information
+Use it anywhere you want to create a Color lighter or darker in cotrast:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+// get opposite color of a already defined color:
+  Color? opposite = SColors.oppositeColor(colorStr: '#6a87e3');
+  
+  // get lighter color of a already defined color with factor:
+  Color? lighter = SColors.lighterColor(.3, colorInt: 0xFF6A87E3);
+  
+  // get darker color of an already defined color with factor:
+  Color? darker = SColors.darkerColor(.7, color: const Color(0xff6a87e3));
+  
+  // get hsv color of an already defined color:
+  Color? hsv = SColors.rgbToHsv(colorStr: '#6a87e3');
+```
