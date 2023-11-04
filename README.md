@@ -12,6 +12,11 @@ A playful dart package to play with colors and get a lighter and darker color fr
 
 To use this plugin, add scolors as a dependency in your pubspec.yaml file.
 
+```yaml
+dependencies:
+  scolors: ^1.0.0
+```
+
 ## Example
 
 Import the library.
